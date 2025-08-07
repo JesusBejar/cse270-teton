@@ -64,6 +64,7 @@ class TestSmokeTest():
     self.driver.find_element(By.NAME, "biztitle").send_keys("hello")
     self.driver.find_element(By.NAME, "submit").click()
     self.driver.find_element(By.NAME, "email").click()
+    assert self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)").text == "Email"
   
   def test_dIRECTORY(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/directory.html")

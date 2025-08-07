@@ -8,7 +8,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 
 class TestSmokeTest():
@@ -65,8 +64,6 @@ class TestSmokeTest():
     self.driver.find_element(By.NAME, "biztitle").send_keys("hello")
     self.driver.find_element(By.NAME, "submit").click()
     self.driver.find_element(By.NAME, "email").click()
-    elements = self.driver.find_elements(By.NAME, "email")
-    assert len(elements) > 0
   
   def test_dIRECTORY(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/directory.html")
